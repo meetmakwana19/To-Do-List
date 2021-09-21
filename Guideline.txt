@@ -1,0 +1,205 @@
+1]*************************
+type on command line
+npm
+npx
+node --version
+npm --version
+npx --version
+to see if nodejs and npm are installed or not
+
+2]*************
+Go to google- how to create react app, offical doc
+
+3]
+Nodejs is runtime to use js outside of browser, inside computer by using computer resources
+npm is package manager like python's pip 
+
+npm downloads the package permanently on the package
+
+npx is used to run that package only once for that time.
+
+therefore will use npx to create react app since we want to create it only once at the start and not again
+
+4]
+npx create-react-app "name"
+npx create-react-app todos-list
+(can take more than 5mins)
+
+5]
+>npm start
+
+6]
+All development will be in src folder
+
+7}
+index.js is the entry point of our react-app
+
+8]
+website is divided into components in react
+app.js is the 1st component
+
+9]
+JSX(Javascript Syntax Extension -> HTML + JS, used to add dynamic JS in react components with HTML)
+
+10]***********************************
+App.js is imp and saving it and running makes the reactwebapp update and run on browser 
+
+11]
+first added bootstrap for css and js in index.HTML
+then added navbar to app.js and tested it and it worked
+then removed the navbar from app.js and added it to Header.js and imported Header.js inside App.js
+
+12]
+props are js objects which we are passing from are parent component to child component, eg : props.title in Header.js where title is passed from App.js to Header.js
+
+14]
+Deal with all the warnings shown in the console of browser
+for eg remove importing logo from App.js
+
+15]
+defaultProps are used when nothing is passed from the parent component for that attribute
+
+16]
+making todos object in App.js
+and then using it with a loop by map() fun
+also updating todoItem.js and adding a div with h5,p,button for how we want our todoItem to be displayed
+
+17]
+making onDelete method in app.js
+and it'll work on clicking on that button, the msg will come on the devtools console
+
+18]
+App.js is father and Todos.js is his son
+App.js gave todos={todos} onDelete={onDelete} these 2 properties to his son Todos.js
+His son kept these 2 things in his bag of "props"
+and will use whenever he need like props.todos and props.onDelete
+
+19]
+Now todoItem.js is the daughter of todos.js 
+Todos.js made his own "todo" ad got "onDelete" from his father App.js
+These 2 of Todos.js will passed to his daughter todoItem.js
+the daughter will keep it safe in export "const TodoItem = ({todo, onDelete})"
+
+20]
+giving key in Todos.js and passing a arrow func in the onClick of TodoItem.js
+
+21]
+using "use state' of reactjs
+
+putting   const [todos, setTodos] = useState([
+instead of let todos obj
+
+and added setTodos method in cont onDelete method for eleting todos
+
+22]
+if length===0: print("no todos") elif props.todos.map in Todos.js
+
+23]
+editing footer with css 
+
+24]
+created AddTodo.js
+took form template from bootstrap
+
+25]
+making onSubmit method
+
+added onChange={(e)=>{setTitle(e.target.value)}}
+
+26]
+made addTodo method in AddTodo.js and App.js
+
+27]
+edited some css like hr tags
+
+28]
+added if statement in App.js's addTodo method 
+to add todoItem when there are no todoItem on the webapp
+
+29]Made const [todos, setTodos] an empty array !!
+
+30]to make previous todos show on relaoding too we will need to use localStorage.
+using localStorage.getItem in App.js
+
+31]Whenever there will be addTodoor or onDelete
+
+localStorage.setItem("todos") will set the todos in addTodoor & onDelete
+
+32]
+useEffect hook to avoid the weird behaviour of thw webapp
+Used useEffect() func in App.js to to set the todo and save it in local localStorage
+
+33]
+To make the fields blank after these funs are called
+        setTitle("")
+        setDesc("") in AddTodo.js
+
+34]
+Gave else loop in the after alert() so tat no blank todos are added.
+
+35]
+>npm install react-router-dom
+
+36]
+Copying import statment for router-dom from offical doc into App.js
+https://reactrouter.com/web/guides/quick-start
+
+37]
+In App.js
+Will wrap the whole app( I mean the things inside return statement- react components)
+inside <Router> tag 
+
+38]
+In App.js
+Copying Switch tag from router docs
+
+39]
+Putting AddTodo,Todos components to route when path="/" for rendering that arrow func
+containing those 2 components
+
+40]
+Creating About.js component
+for path"/About" 
+and importing About component in App.js
+
+41]
+url/about is not working as first "/" is getting routed
+So we'll put "exact" keyword before "path" in Switch tag of App.js 
+
+42]
+import {Link} from "react-router-dom";
+in Header.js
+
+and replaced (Ctrl+H in VS code) "href=" to "to=" since we are using JSX
+
+and right clicked on selected anchor tag "a" and did "Change all occurrences" to "Link"
+
+43]
+changed "to" tag to "/" and "/about" from "#" in "to=" in Header.js
+also did the same for props.title
+
+44]IMP NOTE FOR USING react-router-dom:
+using "Link to="
+instead of "a href="
+
+45]
+Check chrome extension "React Developer Tools"
+and it'll show that oour page is using development build of React
+
+46]
+In devtools,\
+can see components tab which will the flow of working of our react components.
+
+47]
+Removed hr tag and <> </> from AddTodo.js 
+and added them in TodoItem.js
+
+48] Resolved all errors and warnings by looking onto the console.
+
+49] To build this application for production
+>npm run build
+
+This will create a "build" folder 
+
+50]
+Go to build folder and run index.html by closing everthing which will show the our app as production build !!!!!!!!!!!!1
